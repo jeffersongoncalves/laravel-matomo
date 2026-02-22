@@ -68,16 +68,6 @@ $settings->save();
 | `file` | `'matomo.php'` | PHP tracking file |
 | `script` | `'matomo.js'` | JS tracking file |
 
-## Filament Integration
-
-For [Filament](https://filamentphp.com) users, install the companion plugin [`jeffersongoncalves/filament-matomo`](https://github.com/jeffersongoncalves/filament-matomo) to manage Matomo settings directly from your admin panel with a dedicated Settings Page:
-
-```bash
-composer require jeffersongoncalves/filament-matomo
-```
-
-See the [filament-matomo documentation](https://github.com/jeffersongoncalves/filament-matomo) for setup instructions.
-
 ## Testing
 
 ```bash
