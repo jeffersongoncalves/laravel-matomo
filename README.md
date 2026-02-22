@@ -10,29 +10,63 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/laravel-matomo/fix-php-code-style-issues.yml?branch=master&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/laravel-matomo/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/laravel-matomo.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/laravel-matomo)
 
-A simple and elegant Laravel package that seamlessly integrates Matomo Analytics tracking code into your Blade views.
+A simple and elegant Laravel package that seamlessly integrates Matomo Analytics tracking code into your Blade views. Settings are stored in the database via [spatie/laravel-settings](https://github.com/spatie/laravel-settings), allowing runtime configuration without `.env` files.
 
 ## Installation
 
-You can install the package via composer:
+Install the package via Composer:
 
 ```bash
 composer require jeffersongoncalves/laravel-matomo
 ```
 
-## Usage
-
-Publish config file.
+Publish the settings migration:
 
 ```bash
-php artisan vendor:publish --tag=matomo-config
+php artisan vendor:publish --tag=matomo-settings-migrations
 ```
 
-Add head template.
+Run the migration:
+
+```bash
+php artisan migrate
+```
+
+## Usage
+
+Add the tracking script to your Blade layout (typically before `</head>`):
 
 ```php
 @include('matomo::script')
 ```
+
+### Configuration
+
+All settings are stored in the database. You can update them via code:
+
+```php
+use JeffersonGoncalves\Matomo\Settings\MatomoSettings;
+
+$settings = app(MatomoSettings::class);
+
+$settings->domains = 'example.com';
+$settings->site_id = '1';
+$settings->host_analytics = 'analytics.example.com';
+$settings->file = 'matomo.php';
+$settings->script = 'matomo.js';
+
+$settings->save();
+```
+
+### Available Settings
+
+| Setting | Default | Description |
+|---|---|---|
+| `domains` | `''` | Domain(s) for tracking |
+| `site_id` | `'1'` | Site ID in Matomo |
+| `host_analytics` | `''` | Matomo server URL (without protocol) |
+| `file` | `'matomo.php'` | PHP tracking file |
+| `script` | `'matomo.js'` | JS tracking file |
 
 ## Testing
 
@@ -54,7 +88,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Jèfferson Gonçalves](https://github.com/jeffersongoncalves)
+- [Jefferson Goncalves](https://github.com/jeffersongoncalves)
 - [All Contributors](../../contributors)
 
 ## License
