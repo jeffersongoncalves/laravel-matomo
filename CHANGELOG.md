@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.0.1 - 2026-02-23
+
+### Fixed
+
+- Add datetime prefix to settings migration filename
+
 ## v2.0.0 - 2026-02-22
 
 ### Breaking Changes
@@ -24,11 +30,13 @@ All notable changes to this project will be documented in this file.
    ```bash
    composer require jeffersongoncalves/laravel-matomo:^2.0
    
+   
    ```
 2. Publish the settings migration:
    
    ```bash
    php artisan vendor:publish --tag=matomo-settings-migrations
+   
    
    ```
 3. Run the migration:
@@ -36,11 +44,13 @@ All notable changes to this project will be documented in this file.
    ```bash
    php artisan migrate
    
+   
    ```
 4. Remove old config file if published:
    
    ```bash
    rm config/matomo.php
+   
    
    ```
 5. Configure settings via code:
@@ -53,6 +63,7 @@ All notable changes to this project will be documented in this file.
    $settings->site_id = '1';
    $settings->host_analytics = 'analytics.example.com';
    $settings->save();
+   
    
    ```
 
