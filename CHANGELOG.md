@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.0.2 - 2026-02-24
+
+### What's Changed
+
+- Add Laravel 13.x support in composer.json
+- Add orchestra/testbench ^11.0 for Laravel 13 testing
+
 ## v2.0.1 - 2026-02-23
 
 ### Fixed
@@ -31,11 +38,13 @@ All notable changes to this project will be documented in this file.
    composer require jeffersongoncalves/laravel-matomo:^2.0
    
    
+   
    ```
 2. Publish the settings migration:
    
    ```bash
    php artisan vendor:publish --tag=matomo-settings-migrations
+   
    
    
    ```
@@ -45,11 +54,13 @@ All notable changes to this project will be documented in this file.
    php artisan migrate
    
    
+   
    ```
 4. Remove old config file if published:
    
    ```bash
    rm config/matomo.php
+   
    
    
    ```
@@ -63,6 +74,7 @@ All notable changes to this project will be documented in this file.
    $settings->site_id = '1';
    $settings->host_analytics = 'analytics.example.com';
    $settings->save();
+   
    
    
    ```
