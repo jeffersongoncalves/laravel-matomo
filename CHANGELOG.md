@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v2.0.4 - 2026-05-23
+
+**Full Changelog**: https://github.com/jeffersongoncalves/laravel-matomo/compare/v2.0.3...v2.0.4
+
 ## v2.0.3 - 2026-04-26
 
 ### What's Changed
@@ -49,11 +53,13 @@ All notable changes to this project will be documented in this file.
    
    
    
+   
    ```
 2. Publish the settings migration:
    
    ```bash
    php artisan vendor:publish --tag=matomo-settings-migrations
+   
    
    
    
@@ -67,11 +73,13 @@ All notable changes to this project will be documented in this file.
    
    
    
+   
    ```
 4. Remove old config file if published:
    
    ```bash
    rm config/matomo.php
+   
    
    
    
@@ -87,6 +95,7 @@ All notable changes to this project will be documented in this file.
    $settings->site_id = '1';
    $settings->host_analytics = 'analytics.example.com';
    $settings->save();
+   
    
    
    
