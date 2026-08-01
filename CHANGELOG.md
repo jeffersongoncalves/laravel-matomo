@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## v3.0.0 - 2026-08-01
+
+### Security
+
+Drop Laravel 11 support (EOL, unpatched). Require `laravel/framework: ^12.61.1|^13.12.0` to fix:
+
+- GHSA-crmm-hgp2-wgrp — Temporary Signed URL Path Confusion
+- GHSA-5vg9-5847-vvmq — CRLF injection in default email validation rule
+
+**Breaking change**: Laravel 11 is no longer supported.
+
 ## v2.0.4 - 2026-05-23
 
 **Full Changelog**: https://github.com/jeffersongoncalves/laravel-matomo/compare/v2.0.3...v2.0.4
@@ -54,11 +65,13 @@ All notable changes to this project will be documented in this file.
    
    
    
+   
    ```
 2. Publish the settings migration:
    
    ```bash
    php artisan vendor:publish --tag=matomo-settings-migrations
+   
    
    
    
@@ -74,11 +87,13 @@ All notable changes to this project will be documented in this file.
    
    
    
+   
    ```
 4. Remove old config file if published:
    
    ```bash
    rm config/matomo.php
+   
    
    
    
@@ -95,6 +110,7 @@ All notable changes to this project will be documented in this file.
    $settings->site_id = '1';
    $settings->host_analytics = 'analytics.example.com';
    $settings->save();
+   
    
    
    
