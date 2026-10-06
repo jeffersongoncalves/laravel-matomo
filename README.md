@@ -1,6 +1,6 @@
 <div class="filament-hidden">
 
-![Laravel Matomo](https://raw.githubusercontent.com/jeffersongoncalves/laravel-matomo/master/art/jeffersongoncalves-laravel-matomo.png)
+![Laravel Matomo](https://raw.githubusercontent.com/jeffersongoncalves/laravel-matomo/main/art/jeffersongoncalves-laravel-matomo.png)
 
 </div>
 
@@ -9,7 +9,7 @@
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-FFDD00?style=flat-square&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/jeffersongoncalves)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/laravel-matomo.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/laravel-matomo)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/laravel-matomo/fix-php-code-style-issues.yml?branch=master&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/laravel-matomo/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/laravel-matomo/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/laravel-matomo/actions?query=workflow%3A"Fix+PHP+code+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/laravel-matomo.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/laravel-matomo)
 
 A simple and elegant Laravel package that seamlessly integrates Matomo Analytics tracking code into your Blade views. Settings are stored in the database via [spatie/laravel-settings](https://github.com/spatie/laravel-settings), allowing runtime configuration without `.env` files.
