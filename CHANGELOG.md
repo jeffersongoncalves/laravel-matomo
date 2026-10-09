@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v3.1.0 - 2026-10-09
+
+- Every `<script>` rendered by the package carries Laravel's Vite CSP nonce when the app sets one (e.g. via laravel-security-headers), so nonce-based `script-src` policies work without `'unsafe-inline'`.
+
 ## v3.0.0 - 2026-08-01
 
 ### Security
@@ -66,11 +70,13 @@ Drop Laravel 11 support (EOL, unpatched). Require `laravel/framework: ^12.61.1|^
    
    
    
+   
    ```
 2. Publish the settings migration:
    
    ```bash
    php artisan vendor:publish --tag=matomo-settings-migrations
+   
    
    
    
@@ -88,11 +94,13 @@ Drop Laravel 11 support (EOL, unpatched). Require `laravel/framework: ^12.61.1|^
    
    
    
+   
    ```
 4. Remove old config file if published:
    
    ```bash
    rm config/matomo.php
+   
    
    
    
@@ -110,6 +118,7 @@ Drop Laravel 11 support (EOL, unpatched). Require `laravel/framework: ^12.61.1|^
    $settings->site_id = '1';
    $settings->host_analytics = 'analytics.example.com';
    $settings->save();
+   
    
    
    
