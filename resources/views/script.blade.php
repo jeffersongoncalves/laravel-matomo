@@ -1,6 +1,9 @@
+@php
+    $cookieConsent = function_exists('cookie_consent_script_attributes') ? cookie_consent_script_attributes('matomo') : '';
+@endphp
 @if(!empty($settings->host_analytics))
     <!-- Matomo -->
-    <script @if(\Illuminate\Support\Facades\Vite::cspNonce()) nonce="{{ \Illuminate\Support\Facades\Vite::cspNonce() }}" @endif>
+    <script{!! $cookieConsent !!} @if(\Illuminate\Support\Facades\Vite::cspNonce()) nonce="{{ \Illuminate\Support\Facades\Vite::cspNonce() }}" @endif>
         var _paq = window._paq = window._paq || [];
         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
         @if(!empty($settings->domains))
